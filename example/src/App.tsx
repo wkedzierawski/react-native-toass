@@ -1,13 +1,14 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-toass';
-
-const result = multiply(3, 7);
+import { View, StyleSheet, Button } from 'react-native';
+import { showToass, Toass } from 'react-native-toass';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Button title="Show toass" onPress={() => showToass('Hello world!')} />
+      </View>
+      <Toass />
+    </>
   );
 }
 
@@ -16,5 +17,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  button: {
+    marginBottom: 50,
   },
 });
