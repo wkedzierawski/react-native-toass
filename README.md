@@ -7,7 +7,7 @@ A simple toast (notification) implementation for **React Native** with animated 
 ## ✨ Features
 
 
-- Global toast trigger using an internal event emitter
+- Global toass trigger using an internal event emitter
 - Fade-in/fade-out animation using `react-native-reanimated`
 - Fully customizable styles and props
 - Works out-of-the-box with React Native projects
