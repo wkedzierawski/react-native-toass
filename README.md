@@ -43,3 +43,18 @@ import { showToass } from 'react-native-toass';
 
 showToass('Hello from anywhere in the app!');
 ```
+
+
+## API
+
+### `<Toass />` Props
+
+| Prop                    | Type                                | Description                                                                 |
+|-------------------------|-------------------------------------|-----------------------------------------------------------------------------|
+| `textProps`             | `TextProps`                         | Props passed to the inner `<Text>` component (e.g., `style`, `numberOfLines`). |
+| `containerProps`        | `ViewProps`                         | Props passed to the outer `<View>` container wrapping the toast message.   |
+| `animatedContainerProps`| `AnimatedProps<ViewProps>`          | Props for the animated wrapper `<Animated.View>`, such as `entering` or `exiting`. |
+| `duration`              | `number`                            | Duration (in milliseconds) the toast stays visible. Default is `3000`.     |
+| `animationDuration`     | `number`                            | Duration of the show/hide animation (in milliseconds). Default is `300`.   |
+| `leading`               | `ReactNode`                         | Element rendered before the message text (e.g., icon).                     |
+| `trailing`              | `ReactNode`                         | Element rendered after the message text (e.g., close button, icon).        |
