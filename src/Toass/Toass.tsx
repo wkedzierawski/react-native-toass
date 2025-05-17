@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -23,6 +23,8 @@ export const Toass = ({
   animatedContainerProps,
   duration = 3000,
   animationDuration = 300,
+  leading,
+  trailing,
 }: ToassProps) => {
   const [message, setMessage] = useState('');
 
@@ -49,16 +51,33 @@ export const Toass = ({
     opacity: opacity.value,
   }));
 
+  const animatedContainerStyles = useMemo(
+    () => [styles.wrapper, animatedContainerProps?.style, animatedStyles],
+    [animatedContainerProps?.style, animatedStyles]
+  );
+
+  const containerStyles = useMemo(
+    () => [styles.container, containerProps?.style],
+    [containerProps?.style]
+  );
+
+  const textStyles = useMemo(
+    () => [styles.text, textProps?.style],
+    [textProps?.style]
+  );
+
   return (
     <Animated.View
-      style={[styles.wrapper, animatedStyles]}
       pointerEvents="none"
       {...animatedContainerProps}
+      style={animatedContainerStyles}
     >
-      <View style={styles.container} {...containerProps}>
-        <Text style={styles.text} {...textProps}>
+      <View {...containerProps} style={containerStyles}>
+        {leading}
+        <Text {...textProps} style={textStyles}>
           {message}
         </Text>
+        {trailing}
       </View>
     </Animated.View>
   );
