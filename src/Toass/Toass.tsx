@@ -21,6 +21,8 @@ export const Toass = ({
   textProps,
   containerProps,
   animatedContainerProps,
+  duration = 3000,
+  animationDuration = 300,
 }: ToassProps) => {
   const [message, setMessage] = useState('');
 
@@ -33,13 +35,15 @@ export const Toass = ({
       setMessage(payloadMessage);
       setVisible(true);
 
-      setTimeout(() => setVisible(false), 3000);
+      setTimeout(() => setVisible(false), duration);
     });
-  }, []);
+  }, [duration]);
 
   useEffect(() => {
-    opacity.value = withTiming(visible ? 1 : 0, { duration: 300 });
-  }, [opacity, visible]);
+    opacity.value = withTiming(visible ? 1 : 0, {
+      duration: animationDuration,
+    });
+  }, [animationDuration, opacity, visible]);
 
   const animatedStyles = useAnimatedStyle(() => ({
     opacity: opacity.value,

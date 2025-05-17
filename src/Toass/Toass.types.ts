@@ -7,4 +7,6 @@ export type ToassProps = {
   animatedContainerProps?: AnimatedProps<ViewProps>;
   onShowToass?: () => void;
   onHideToass?: () => void;
+  duration?: number;
+  animationDuration?: number;
 };
