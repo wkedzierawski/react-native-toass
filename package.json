@@ -1,6 +1,6 @@
 {
   "name": "react-native-toass",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Toass implementation for iOS and Android",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -33,7 +33,6 @@
   ],
   "scripts": {
     "example": "yarn workspace react-native-toass-example",
-    "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
